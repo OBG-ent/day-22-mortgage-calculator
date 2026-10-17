@@ -1,0 +1,103 @@
+/* Mortgage Calculator — clean, dark card UI */
+:root {
+  --bg: #1a1a2e;
+  --card: #f7f5f0;
+  --ink: #23232e;
+  --accent: #d4a017;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 32px 16px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 32px;
+  width: 100%;
+  max-width: 640px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+h1 { font-size: 1.7rem; margin-bottom: 6px; }
+
+.subtitle { color: #666; margin-bottom: 20px; }
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+input {
+  padding: 10px 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+input:focus { border-color: var(--accent); outline: none; }
+
+button {
+  grid-column: 1 / -1;
+  padding: 12px;
+  font-size: 1.05rem;
+  font-weight: bold;
+  background: var(--accent);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover { filter: brightness(1.08); }
+
+.hidden { display: none; }
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 16px 0 24px;
+}
+
+.stat {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 14px;
+  text-align: center;
+}
+
+.stat-label { display: block; font-size: 0.8rem; color: #888; margin-bottom: 6px; }
+.stat-value { font-size: 1.25rem; font-weight: 800; }
+
+h3 { margin-bottom: 10px; }
+
+table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+
+th, td { padding: 8px 6px; text-align: right; border-bottom: 1px solid #eee; }
+th:first-child, td:first-child { text-align: left; }
+th { color: #888; font-weight: 600; }
+
+@media (max-width: 540px) {
+  form { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: 1fr; }
+}
